@@ -1,8 +1,23 @@
 [
   {
-    "firstName": "Henil",
-    "lastName": "Shah",
-    "email": "henil123@example.com",
-    "password": "123456"
+    "firstName": "Harry",
+    "lastName": "Potter",
+    "slug": "harry-potter",
+    "email": "harry@example.com",
+    "password": "harry1234"
+  },
+  {
+    "firstName": "Hermione",
+    "lastName": "Granger",
+    "slug": "hermione-granger",
+    "email": "hermione@example.com",
+    "password": "hermione1234"
+  },
+  {
+    "firstName": "Ron",
+    "lastName": "Weasley",
+    "slug": "ron-weasley",
+    "email": "ron@example.com",
+    "password": "ron123456"
   }
 ]

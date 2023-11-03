@@ -35,7 +35,7 @@ const Home = () => {
 
       <div className="h-10" />
 
-      <div className="grid grid-cols-3 gap-4">
+      <div className="grid grid-cols-1">
         {homeMenu.map((menu, i) => (
           <Card key={i} title={menu.title} linkLabel={menu.linkLabel} destination={menu.destination} />
         ))}
