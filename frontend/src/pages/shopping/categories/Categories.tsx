@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import { CATEGORIES } from '../../../../constants'
+import { CATEGORIES } from '../../../constants'
 
 const Categories = () => {
   return (

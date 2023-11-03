@@ -1,5 +1,5 @@
 import { Link, useParams } from 'react-router-dom'
-import { CATEGORIES } from '../../../../constants'
+import { CATEGORIES } from '../../../constants'
 
 export const products = [
   {
