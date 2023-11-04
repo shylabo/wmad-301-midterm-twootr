@@ -1,7 +1,7 @@
-import { useCallback } from 'react'
 import { PiArrowLeftBold } from 'react-icons/pi'
 
 import { Button } from '@/components/ui/button'
+import { useNavigate } from 'react-router-dom'
 
 interface HeaderProps {
   label: string
@@ -9,13 +9,14 @@ interface HeaderProps {
 }
 
 const Header: React.FC<HeaderProps> = ({ label, showBackArrow }) => {
-  const handleBack = useCallback(() => {}, [])
+  const navigate = useNavigate()
+
   return (
     <div className="sticky top-0 z-50 bg-white/80 backdrop-blur-sm p-3">
       <div className="flex items-center gap-2">
         {showBackArrow && (
           <Button variant="ghost" size="icon">
-            <PiArrowLeftBold onClick={handleBack} size={20} className="shrink-0" />
+            <PiArrowLeftBold onClick={() => navigate('/')} size={20} className="shrink-0" />
           </Button>
         )}
         <h1 className="text-xl font-semibold">{label}</h1>
