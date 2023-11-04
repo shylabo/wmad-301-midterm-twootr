@@ -5,6 +5,7 @@ import createTwoot from '@/actions/createTwoot'
 import { Button } from '@/components/ui/button'
 import { Textarea } from '@/components/ui/textarea'
 import { Avatar, AvatarImage } from '@/components/ui/avatar'
+import { useToast } from '@/components/ui/use-toast'
 
 interface TwootInputProps {
   user: User
@@ -12,6 +13,7 @@ interface TwootInputProps {
 }
 
 const TwootInput: React.FC<TwootInputProps> = ({ user, onSubmitCallback }) => {
+  const { toast } = useToast()
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [charCount, setCharCount] = useState(0)
   const contentRef = useRef<HTMLTextAreaElement | null>(null)
@@ -36,6 +38,11 @@ const TwootInput: React.FC<TwootInputProps> = ({ user, onSubmitCallback }) => {
 
       contentRef.current.value = ''
       setCharCount(0)
+
+      toast({
+        title: 'Twoot has been created!',
+        description: newTwoot.content,
+      })
 
       await onSubmitCallback(newTwoot)
     } catch (err) {
