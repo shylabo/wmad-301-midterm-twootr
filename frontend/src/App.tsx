@@ -12,15 +12,17 @@ function App() {
     <>
       <Toaster />
       <Routes>
+        {/* Auth */}
+        <Route path="login" element={<Login />} />
+
+        {/* App */}
         <Route element={<Layout />}>
           <Route index element={<Home />} />
-          {/* Auth */}
-          <Route path="login" element={<Login />} />
-
           <Route path="twoots/:twootId" element={<TwootPage />} />
-
-          <Route path="*" element={<NotFound />} />
         </Route>
+
+        {/* Error */}
+        <Route path="*" element={<NotFound />} />
       </Routes>
     </>
   )
