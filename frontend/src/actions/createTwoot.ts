@@ -1,5 +1,5 @@
-import { Twoot } from '../types'
-import users from '../users.json'
+import { Twoot } from '@/types'
+import users from '@/users.json'
 
 interface createTwootPayload {
   authorSlug: string

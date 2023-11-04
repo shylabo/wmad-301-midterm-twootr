@@ -1,6 +1,10 @@
 import { FormEvent, useRef, useState } from 'react'
-import { Twoot, User } from '../types'
-import createTwoot from '../actions/createTwoot'
+
+import { Twoot, User } from '@/types'
+import createTwoot from '@/actions/createTwoot'
+import { Button } from '@/components/ui/button'
+import { Textarea } from '@/components/ui/textarea'
+import { Avatar, AvatarImage } from '@/components/ui/avatar'
 
 interface TwootInputProps {
   user: User
@@ -50,10 +54,12 @@ const TwootInput: React.FC<TwootInputProps> = ({ user, onSubmitCallback }) => {
   return (
     <form onSubmit={onSubmit}>
       <div className="p-3 border-b border-slate-100 space-y-3">
-        <div className="flex items-center gap-5">
-          <img src={user.avatarUrl} className="w-10 rounded-full object-contain" alt="user avatar" />
-          <textarea
-            className="w-full resize-none placeholder:text-xl border-b-[1px] border-slate-100"
+        <div className="flex items-start gap-5">
+          <Avatar>
+            <AvatarImage src={user.avatarUrl} alt="user avatar" />
+          </Avatar>
+          <Textarea
+            className="w-full resize-none placeholder:text-xl text-xl border-none"
             placeholder="What is happening?"
             maxLength={maxTwootTextLength}
             ref={contentRef}
@@ -62,13 +68,13 @@ const TwootInput: React.FC<TwootInputProps> = ({ user, onSubmitCallback }) => {
             required
           />
         </div>
-        <div className="flex items-center justify-end gap-x-3">
+        <div className="flex items-center justify-end gap-x-5">
           <div className={`${charCount === maxTwootTextLength ? 'text-red-500' : 'text-slate-500'}`}>
             {charCount}/{maxTwootTextLength}
           </div>
-          <button type="submit" className="px-4 py-1.5 rounded-full bg-sky-500 text-white" disabled={isSubmitting}>
+          <Button type="submit" disabled={isSubmitting}>
             Post
-          </button>
+          </Button>
         </div>
       </div>
     </form>

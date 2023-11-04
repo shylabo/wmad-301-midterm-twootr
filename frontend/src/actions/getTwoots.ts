@@ -1,6 +1,6 @@
-import { Twoot } from '../types'
-import users from '../users.json'
-import { getFakeAvatarUrl } from '../utils/fakeAvatar'
+import { Twoot } from '@/types'
+import users from '@/users.json'
+import { getFakeAvatarUrl } from '@/lib/utils'
 
 async function getTwoots(): Promise<Twoot[]> {
   const url = `http://localhost:8080/twoots`
