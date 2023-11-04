@@ -9,3 +9,21 @@ export function getFakeAvatarUrl(userSlug: string): string {
   const avatarUrl = `https://api.dicebear.com/7.x/pixel-art/svg?seed=${userSlug}`
   return avatarUrl
 }
+
+export function getDaysCountFromDate(twootDate: Date): number {
+  const currentDate = new Date()
+  const timeDiff = currentDate.getTime() - twootDate.getTime()
+  const daysDiff = Math.floor(timeDiff / (1000 * 60 * 60 * 24)) // 1day: 1000mill sec * 60sec * 60min * 24hours
+
+  return daysDiff
+}
+
+export function parseDateStringToDate(dateString: string): Date | null {
+  const parsedDate = new Date(dateString)
+
+  if (!isNaN(parsedDate.getTime())) {
+    return parsedDate
+  }
+
+  return null
+}
