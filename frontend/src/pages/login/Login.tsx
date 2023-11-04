@@ -1,7 +1,11 @@
 import { FormEvent, useRef, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
+import { ClipLoader } from 'react-spinners'
 
 import login from '@/actions/login'
+import { Button } from '@/components/ui/button'
+import { Label } from '@/components/ui/label'
+import { Input } from '@/components/ui/input'
 
 const Login = () => {
   const navigate = useNavigate()
@@ -34,24 +38,38 @@ const Login = () => {
   }
 
   return (
-    <div className="grid grid-cols-1 place-items-center">
-      <p>Welcome back!</p>
-      <br />
-      <form onSubmit={onSubmit} className="space-y-3">
-        <div className="flex flex-col gap-1">
-          <label htmlFor="email">email</label>
-          <input id="email" type="email" className="border" disabled={isSubmitting} ref={emailRef} required />
-        </div>
-        <div className="flex flex-col gap-1">
-          <label htmlFor="password">password</label>
-          <input id="password" type="password" className="border" disabled={isSubmitting} ref={passwordRef} required />
+    <div className="flex justify-center w-full pt-20">
+      <form onSubmit={onSubmit} className="space-y-10 w-full max-w-sm">
+        <h1 className="text-3xl">Welcome back!</h1>
+        <div className="space-y-3">
+          <div className="flex flex-col gap-2">
+            <Label htmlFor="email">email</Label>
+            <Input
+              id="email"
+              type="email"
+              placeholder="twoot@example.com"
+              disabled={isSubmitting}
+              ref={emailRef}
+              required
+            />
+          </div>
+          <div className="flex flex-col gap-2">
+            <Label htmlFor="password">password</Label>
+            <Input
+              id="password"
+              type="password"
+              placeholder="Your password"
+              disabled={isSubmitting}
+              ref={passwordRef}
+              required
+            />
+          </div>
         </div>
         <div className="flex justify-end">
-          <button type="submit" className="bg-sky-500 text-white p-2 rounded-md" disabled={isSubmitting}>
-            Login
-          </button>
+          <Button type="submit" disabled={isSubmitting} className="w-20">
+            {isSubmitting ? <ClipLoader color="#fff" size={16} aria-label="Loading Spinner" /> : 'Login'}
+          </Button>
         </div>
-        {isSubmitting && <p>Submitting...</p>}
       </form>
     </div>
   )

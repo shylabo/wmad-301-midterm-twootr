@@ -15,7 +15,7 @@ const Layout = () => {
   }, [user, navigate])
 
   return (
-    <div className="container mx-auto h-screen w-screen">
+    <div className="h-screen w-screen">
       <div className="grid grid-cols-12 h-full w-full">
         <div className="col-span-2 lg:col-span-3">
           <Sidebar />
