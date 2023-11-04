@@ -1,9 +1,19 @@
-import { Outlet } from 'react-router-dom'
+import { Outlet, useNavigate } from 'react-router-dom'
 
 import Sidebar from './sidebar/Sidebar'
 import Header from './header/Header'
+import { useEffect } from 'react'
 
 const Layout = () => {
+  const user = localStorage.getItem('user')
+  const navigate = useNavigate()
+
+  useEffect(() => {
+    if (!user) {
+      navigate('/login')
+    }
+  }, [user, navigate])
+
   return (
     <div className="container mx-auto h-screen w-screen">
       <div className="grid grid-cols-12 h-full w-full">
