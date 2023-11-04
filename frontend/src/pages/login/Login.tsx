@@ -50,6 +50,7 @@ const Login = () => {
               placeholder="twoot@example.com"
               disabled={isSubmitting}
               ref={emailRef}
+              autoFocus
               required
             />
           </div>
