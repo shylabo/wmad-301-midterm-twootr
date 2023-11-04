@@ -1,45 +1,23 @@
+import { useEffect, useState } from 'react'
+import getTwoots from '../../actions/getTwoots'
 import Card from './Card'
-
-const homeMenu = [
-  {
-    title: '🔗 Home & About transition (Link)',
-    destination: '/about',
-    linkLabel: 'About',
-  },
-  {
-    title: '🧑‍🍳 Recipe app (useParams) ',
-    destination: '/recipe',
-    linkLabel: 'Recipe app',
-  },
-  {
-    title: '🔐 SingUp (useNavigation) ',
-    destination: '/signup',
-    linkLabel: 'Signup',
-  },
-  {
-    title: '🔐 Login (redirect) ',
-    destination: '/login',
-    linkLabel: 'Login',
-  },
-  {
-    title: '🛒 Shopping website (Nested Routes)',
-    destination: '/shopping',
-    linkLabel: 'Go shopping',
-  },
-]
+import { Twoot } from '../../types'
 
 const Home = () => {
+  const [twoots, setTwoots] = useState<Twoot[]>()
+
+  useEffect(() => {
+    const fetchTwoots = async () => {
+      const fetchedTwoots = await getTwoots()
+      setTwoots(fetchedTwoots)
+    }
+    fetchTwoots()
+  }, [])
   return (
     <div>
-      <h1 className="text-3xl">🏠 Welcome to Sample website</h1>
-
       <div className="h-10" />
 
-      <div className="grid grid-cols-1">
-        {homeMenu.map((menu, i) => (
-          <Card key={i} title={menu.title} linkLabel={menu.linkLabel} destination={menu.destination} />
-        ))}
-      </div>
+      <div className="grid grid-cols-1">{twoots && twoots.map((twoot, i) => <Card key={i} twoot={twoot} />)}</div>
     </div>
   )
 }

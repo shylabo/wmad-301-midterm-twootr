@@ -1,5 +1,6 @@
 [
   {
+    "avatarUrl": "https://api.dicebear.com/7.x/pixel-art/svg?seed=user",
     "firstName": "User",
     "lastName": "One",
     "slug": "user1",
@@ -7,6 +8,7 @@
     "password": "password"
   },
   {
+    "avatarUrl": "https://api.dicebear.com/7.x/pixel-art/svg?seed=harry",
     "firstName": "Harry",
     "lastName": "Potter",
     "slug": "harry-potter",
@@ -14,6 +16,7 @@
     "password": "harry1234"
   },
   {
+    "avatarUrl": "https://api.dicebear.com/7.x/pixel-art/svg?seed=hermione",
     "firstName": "Hermione",
     "lastName": "Granger",
     "slug": "hermione-granger",
@@ -21,6 +24,7 @@
     "password": "hermione1234"
   },
   {
+    "avatarUrl": "https://api.dicebear.com/7.x/pixel-art/svg?seed=ron",
     "firstName": "Ron",
     "lastName": "Weasley",
     "slug": "ron-weasley",
