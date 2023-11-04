@@ -15,7 +15,7 @@ async function getTwoots(): Promise<Twoot[]> {
     twoots.forEach((twoot: Twoot) => {
       const author = users.find((user) => user.slug === twoot.authorSlug)
       if (!author) {
-        const avatarUrl = getFakeAvatarUrl()
+        const avatarUrl = getFakeAvatarUrl(twoot.authorSlug)
         twoot.user = {
           avatarUrl: avatarUrl,
           firstName: twoot.author.split(' ')[0],
