@@ -1,9 +1,9 @@
 import { useEffect, useState } from 'react'
 
-import getTwoots from '../../actions/getTwoots'
-import { Twoot, User } from '../../types'
-import TwootCard from '../../components/TwootCard'
-import TwootInput from '../../components/TwootInput'
+import getTwoots from '@/actions/getTwoots'
+import TwootCard from '@/components/TwootCard'
+import TwootInput from '@/components/TwootInput'
+import { Twoot, User } from '@/types'
 
 const Home = () => {
   const [twoots, setTwoots] = useState<Twoot[]>([])

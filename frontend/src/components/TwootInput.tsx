@@ -1,6 +1,6 @@
 import { FormEvent, useRef, useState } from 'react'
-import { Twoot, User } from '../types'
-import createTwoot from '../actions/createTwoot'
+import { Twoot, User } from '@/types'
+import createTwoot from '@/actions/createTwoot'
 
 interface TwootInputProps {
   user: User

@@ -1,7 +1,7 @@
 import { AiOutlineRetweet } from 'react-icons/ai'
-
-import { Twoot } from '../types'
 import { PiBookmarkSimpleBold, PiHeartBold } from 'react-icons/pi'
+
+import { Twoot } from '@/types'
 
 interface CardProps {
   twoot: Twoot

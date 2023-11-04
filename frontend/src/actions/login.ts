@@ -1,5 +1,5 @@
-import { User } from '../types'
-import users from '../users.json'
+import { User } from '@/types'
+import users from '@/users.json'
 
 export interface loginProps {
   email: string

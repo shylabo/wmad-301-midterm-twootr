@@ -1,8 +1,8 @@
+import { useEffect } from 'react'
 import { Outlet, useNavigate } from 'react-router-dom'
 
 import Sidebar from './sidebar/Sidebar'
 import Header from './header/Header'
-import { useEffect } from 'react'
 
 const Layout = () => {
   const user = localStorage.getItem('user')

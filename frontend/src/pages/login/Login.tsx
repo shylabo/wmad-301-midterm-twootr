@@ -1,6 +1,7 @@
 import { FormEvent, useRef, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-import login from '../../actions/login'
+
+import login from '@/actions/login'
 
 const Login = () => {
   const navigate = useNavigate()
