@@ -11,7 +11,7 @@ interface HeaderProps {
 const Header: React.FC<HeaderProps> = ({ label, showBackArrow }) => {
   const handleBack = useCallback(() => {}, [])
   return (
-    <div className="sticky top-0 bg-white/80 backdrop-blur-sm p-3">
+    <div className="sticky top-0 z-50 bg-white/80 backdrop-blur-sm p-3">
       <div className="flex items-center gap-2">
         {showBackArrow && (
           <Button variant="ghost" size="icon">
