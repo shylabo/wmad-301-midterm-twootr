@@ -27,7 +27,7 @@ const Sidebar = () => {
   const navigate = useNavigate()
 
   const handleLogout = () => {
-    localStorage.clear()
+    localStorage.removeItem('user')
     navigate(0) // refresh
   }
 
