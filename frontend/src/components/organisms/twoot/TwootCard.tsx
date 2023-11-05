@@ -38,14 +38,14 @@ const Card: React.FC<CardProps> = ({ twoot }) => {
   }
 
   return (
-    <div className="flex items-start gap-x-3 w-full px-4 py-3 border-b-[1px] border-slate-100">
+    <div className="flex items-start gap-x-3 w-full px-4 py-3 border-b-[1px] border-secondary">
       <Avatar>
         <AvatarImage src={twoot.user.avatarUrl} alt="user avatar" />
       </Avatar>
       <div className="space-y-1 w-[calc(100%-60px)]">
         <div className="flex items-center gap-x-2">
           <h2 className="text-sm font-semibold">{twoot.author}</h2>
-          <p className="text-slate-700 text-xs">
+          <p className="text-muted-foreground text-xs">
             @{twoot.authorSlug} • {daysLabel}
           </p>
         </div>

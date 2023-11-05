@@ -7,7 +7,7 @@ const SidebarLogo = () => {
   const navigate = useNavigate()
   return (
     <Button variant="ghost" size="icon" onClick={() => navigate('/')} className="h-14 w-14 p-4 cursor-pointer">
-      <GiMapleLeaf size={30} color="#D80621" />
+      <GiMapleLeaf size={30} className="text-primary" />
     </Button>
   )
 }
