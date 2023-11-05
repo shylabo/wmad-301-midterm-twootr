@@ -1,4 +1,4 @@
-import { Route, Routes } from 'react-router-dom'
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
 
 import BaseLayout from '@/components/layout/BaseLayout'
 import UserLayout from './components/layout/UserLayout'
@@ -11,30 +11,35 @@ import Bookmarks from '@/components/pages/bookmarks/Bookmarks'
 import Posts from '@/components/pages/user/Posts'
 import Likes from './components/pages/user/Likes'
 import Retwoots from './components/pages/user/Retwoots'
+import { ThemeProvider } from './providers/theme-provider'
 
 function App() {
   return (
     <>
-      <Toaster />
-      <Routes>
-        {/* Auth */}
-        <Route path="login" element={<Login />} />
+      <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
+        <Toaster />
+        <BrowserRouter>
+          <Routes>
+            {/* Auth */}
+            <Route path="login" element={<Login />} />
 
-        {/* App */}
-        <Route element={<BaseLayout />}>
-          <Route index element={<Home />} />
-          <Route path="twoots/:twootId" element={<Twoot />} />
-          <Route path="bookmarks" element={<Bookmarks />} />
-          <Route path=":userSlug" element={<UserLayout />}>
-            <Route index element={<Posts />} />
-            <Route path="likes" element={<Likes />} />
-            <Route path="retwoots" element={<Retwoots />} />
-          </Route>
-        </Route>
+            {/* App */}
+            <Route element={<BaseLayout />}>
+              <Route index element={<Home />} />
+              <Route path="twoots/:twootId" element={<Twoot />} />
+              <Route path="bookmarks" element={<Bookmarks />} />
+              <Route path=":userSlug" element={<UserLayout />}>
+                <Route index element={<Posts />} />
+                <Route path="likes" element={<Likes />} />
+                <Route path="retwoots" element={<Retwoots />} />
+              </Route>
+            </Route>
 
-        {/* Error */}
-        <Route path="*" element={<NotFound />} />
-      </Routes>
+            {/* Error */}
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+        </BrowserRouter>
+      </ThemeProvider>
     </>
   )
 }

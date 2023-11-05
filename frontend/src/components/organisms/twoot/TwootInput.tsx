@@ -62,7 +62,7 @@ const TwootInput: React.FC<TwootInputProps> = ({ user, onSubmitCallback }) => {
 
   return (
     <form onSubmit={onSubmit}>
-      <div className="p-3 border-b border-slate-100 space-y-3">
+      <div className="p-3 border-b border-secondary space-y-3">
         <div className="flex items-start gap-5">
           <Avatar>
             <AvatarImage src={user.avatarUrl} alt="user avatar" />
@@ -78,7 +78,7 @@ const TwootInput: React.FC<TwootInputProps> = ({ user, onSubmitCallback }) => {
           />
         </div>
         <div className="flex items-center justify-end gap-x-5">
-          <div className={`${charCount === maxTwootTextLength ? 'text-red-500' : 'text-slate-500'}`}>
+          <div className={`${charCount === maxTwootTextLength ? 'text-destructive' : 'text-muted-foreground'}`}>
             {charCount}/{maxTwootTextLength}
           </div>
           <Button type="submit" disabled={isSubmitting}>

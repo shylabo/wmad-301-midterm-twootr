@@ -85,8 +85,8 @@ const UserLayout: React.FC = () => {
   return (
     <>
       <Header label={`${user.firstName} ${user.lastName}`} showBackArrow />
-      <div className="relative bg-slate-200 h-40 w-full">
-        <Avatar className="absolute -bottom-16 left-4 w-32 h-32 border-4 border-white bg-slate-100">
+      <div className="relative bg-secondary h-40 w-full">
+        <Avatar className="absolute -bottom-16 left-4 w-32 h-32 border-4 border-white bg-secondary">
           <AvatarImage src={user.avatarUrl} alt="user avatar" />
         </Avatar>
       </div>

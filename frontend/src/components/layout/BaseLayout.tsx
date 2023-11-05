@@ -19,7 +19,7 @@ const BaseLayout = () => {
         <div className="col-span-2 lg:col-span-3">
           <Sidebar />
         </div>
-        <div className="col-span-10 lg:col-span-6 border-x-[1px] border-slate-100">
+        <div className="col-span-10 lg:col-span-6 border-x-[1px] border-secondary">
           <Outlet />
         </div>
       </div>

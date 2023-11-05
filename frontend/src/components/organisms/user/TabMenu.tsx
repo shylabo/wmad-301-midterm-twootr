@@ -13,7 +13,7 @@ const TabMenu: React.FC<TabMenuProps> = ({ userSlug }) => {
     {
       value: 'posts',
       label: 'Posts',
-      path: '/',
+      path: '',
     },
     {
       value: 'likes',
@@ -28,13 +28,13 @@ const TabMenu: React.FC<TabMenuProps> = ({ userSlug }) => {
   ] as const
 
   return (
-    <nav className="flex items-center border-b-[1px] border-slate-100">
+    <nav className="flex items-center border-b-[1px] border-secondary">
       {menu.map((item) => {
         const itemPath = `/${userSlug}${item.path}`
         const isActive = itemPath === pathname
         return (
           <Button key={item.value} variant="ghost" className="h-full rounded-none" asChild>
-            <Link to={itemPath} className={`${isActive && 'border-b-2 border-red-500'}`}>
+            <Link to={itemPath} className={`${isActive && 'border-b-2 border-primary'}`}>
               {item.label}
             </Link>
           </Button>
