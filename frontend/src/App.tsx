@@ -1,4 +1,4 @@
-import { Route, Routes } from 'react-router-dom'
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
 
 import BaseLayout from '@/components/layout/BaseLayout'
 import UserLayout from './components/layout/UserLayout'
@@ -16,25 +16,27 @@ function App() {
   return (
     <>
       <Toaster />
-      <Routes>
-        {/* Auth */}
-        <Route path="login" element={<Login />} />
+      <BrowserRouter>
+        <Routes>
+          {/* Auth */}
+          <Route path="login" element={<Login />} />
 
-        {/* App */}
-        <Route element={<BaseLayout />}>
-          <Route index element={<Home />} />
-          <Route path="twoots/:twootId" element={<Twoot />} />
-          <Route path="bookmarks" element={<Bookmarks />} />
-          <Route path=":userSlug" element={<UserLayout />}>
-            <Route index element={<Posts />} />
-            <Route path="likes" element={<Likes />} />
-            <Route path="retwoots" element={<Retwoots />} />
+          {/* App */}
+          <Route element={<BaseLayout />}>
+            <Route index element={<Home />} />
+            <Route path="twoots/:twootId" element={<Twoot />} />
+            <Route path="bookmarks" element={<Bookmarks />} />
+            <Route path=":userSlug" element={<UserLayout />}>
+              <Route index element={<Posts />} />
+              <Route path="likes" element={<Likes />} />
+              <Route path="retwoots" element={<Retwoots />} />
+            </Route>
           </Route>
-        </Route>
 
-        {/* Error */}
-        <Route path="*" element={<NotFound />} />
-      </Routes>
+          {/* Error */}
+          <Route path="*" element={<NotFound />} />
+        </Routes>
+      </BrowserRouter>
     </>
   )
 }

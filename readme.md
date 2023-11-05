@@ -20,11 +20,11 @@ Twootr is a Social Media SPA built using React for _twoots_.
 
   [x] 7. User cannot post a new _twoot_ empty or with more than 140 characteres.
 
-  [] 8. User must be able to change their name or other details (if bonus added).
+  [x] 8. User must be able to change their name or other details (if bonus added).
 
 - ### Bonus: (4)
 
-  [] 1. Modify the `users.json` file to accomodate more information like (Update the `Local Storage` accordingly):
+  [x] 1. Modify the `users.json` file to accomodate more information like (Update the `Local Storage` accordingly):
 
       - Profile Picture
 
@@ -36,7 +36,7 @@ Twootr is a Social Media SPA built using React for _twoots_.
 
   [x] 2. While creating a new _twoot_ make a character counter that tracks the input and updates in real time.
 
-  [] 3. User must be able to like, save or retwoot each twoot. No need to store this information in the server.
+  [x] 3. User must be able to like, save or retwoot each twoot. No need to store this information in the server.
 
   [x] 4. Display the time of any posted _twoot_ as `[NUMBER]` days ago. If it was posted 0 days ago, display `Today`.
 
@@ -118,7 +118,7 @@ Twootr is a Social Media SPA built using React for _twoots_.
 
   [x] 2. Implement `PRs` to avoid merge conflicts.
 
-  [] 3. Use Github Issues to track bugs and fixes with appropriate labels.
+  [x] 3. Use Github Issues to track bugs and fixes with appropriate labels.
 
 ## Presentation Requirements
 
