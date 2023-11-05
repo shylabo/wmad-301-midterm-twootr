@@ -2,13 +2,19 @@ import { Link } from 'react-router-dom'
 import { useEffect, useState } from 'react'
 
 import getTwoots from '@/actions/getTwoots'
-import TwootCard from '@/components/TwootCard'
-import TwootInput from '@/components/TwootInput'
+import TwootCard from '@/components/organisms/twoot/TwootCard'
+import TwootInput from '@/components/organisms/twoot/TwootInput'
 import Header from '@/components/layout/header/Header'
-import { Twoot, User } from '@/types'
+import { Twoot } from '@/types'
+import { useUser } from '@/hooks/useUser'
 
 const Home = () => {
   const [twoots, setTwoots] = useState<Twoot[]>([])
+  const { user } = useUser()
+
+  if (!user) {
+    throw new Error('User not authenticated')
+  }
 
   useEffect(() => {
     const fetchTwoots = async () => {
@@ -17,10 +23,6 @@ const Home = () => {
     }
     fetchTwoots()
   }, [])
-
-  const loggedInUser = localStorage.getItem('user')
-  if (!loggedInUser) return null
-  const user: User = JSON.parse(loggedInUser)
 
   const handleTwootSubmit = async (newTwoot: Twoot) => {
     setTwoots((prevTwoots) => [newTwoot, ...prevTwoots])

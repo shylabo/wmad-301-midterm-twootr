@@ -1,12 +1,16 @@
 import { Route, Routes } from 'react-router-dom'
 
-import Layout from '@/components/layout/Layout'
+import BaseLayout from '@/components/layout/BaseLayout'
+import UserLayout from './components/layout/UserLayout'
 import { Toaster } from '@/components/ui/toaster'
-import Home from '@/pages/home/Home'
-import Login from '@/pages/login/Login'
-import NotFound from '@/pages/NotFound'
-import TwootPage from '@/pages/twoot/Twoot'
-import Bookmarks from '@/pages/bookmarks/Bookmarks'
+import Home from '@/components/pages/home/Home'
+import Login from '@/components/pages/login/Login'
+import NotFound from '@/components/pages/NotFound'
+import Twoot from '@/components/pages/twoot/Twoot'
+import Bookmarks from '@/components/pages/bookmarks/Bookmarks'
+import Posts from '@/components/pages/user/Posts'
+import Likes from './components/pages/user/Likes'
+import Retwoots from './components/pages/user/Retwoots'
 
 function App() {
   return (
@@ -17,10 +21,15 @@ function App() {
         <Route path="login" element={<Login />} />
 
         {/* App */}
-        <Route element={<Layout />}>
+        <Route element={<BaseLayout />}>
           <Route index element={<Home />} />
-          <Route path="twoots/:twootId" element={<TwootPage />} />
+          <Route path="twoots/:twootId" element={<Twoot />} />
           <Route path="bookmarks" element={<Bookmarks />} />
+          <Route path=":userSlug" element={<UserLayout />}>
+            <Route index element={<Posts />} />
+            <Route path="likes" element={<Likes />} />
+            <Route path="retwoots" element={<Retwoots />} />
+          </Route>
         </Route>
 
         {/* Error */}

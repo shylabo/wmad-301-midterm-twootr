@@ -2,31 +2,34 @@ import { PiBookmarkSimpleBold, PiHouseBold, PiSignOutBold, PiUserBold } from 're
 
 import SidebarLogo from './SidebarLogo'
 import SidebarItem from './SidebarItem'
-
-const items = [
-  {
-    icon: PiHouseBold,
-    label: 'Home',
-    href: '/',
-  },
-  {
-    icon: PiBookmarkSimpleBold,
-    label: 'Bookmarks',
-    href: '/bookmarks',
-  },
-  {
-    icon: PiUserBold,
-    label: 'Profile',
-    href: '/profile',
-  },
-  {
-    icon: PiSignOutBold,
-    label: 'Logout',
-    href: '/logout',
-  },
-]
+import { useUser } from '@/hooks/useUser'
 
 const Sidebar = () => {
+  const { user } = useUser()
+
+  const items = [
+    {
+      icon: PiHouseBold,
+      label: 'Home',
+      href: '/',
+    },
+    {
+      icon: PiBookmarkSimpleBold,
+      label: 'Bookmarks',
+      href: '/bookmarks',
+    },
+    {
+      icon: PiUserBold,
+      label: 'Profile',
+      href: `/${user.slug}`,
+    },
+    {
+      icon: PiSignOutBold,
+      label: 'Logout',
+      href: '/logout',
+    },
+  ]
+
   return (
     <div className="fixed h-full px-2 md:px-4">
       <div className="flex flex-col items-center">

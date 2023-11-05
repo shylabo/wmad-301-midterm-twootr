@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom'
 import { useEffect, useState } from 'react'
 
-import TwootCard from '@/components/TwootCard'
+import TwootCard from '@/components/organisms/twoot/TwootCard'
 import getTwoots from '@/actions/getTwoots'
 import { Twoot } from '@/types'
 import Header from '@/components/layout/header/Header'

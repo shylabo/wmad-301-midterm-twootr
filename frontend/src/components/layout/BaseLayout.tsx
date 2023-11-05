@@ -3,7 +3,7 @@ import { Outlet, useNavigate } from 'react-router-dom'
 
 import Sidebar from './sidebar/Sidebar'
 
-const Layout = () => {
+const BaseLayout = () => {
   const user = localStorage.getItem('user')
   const navigate = useNavigate()
 
@@ -27,4 +27,4 @@ const Layout = () => {
   )
 }
 
-export default Layout
+export default BaseLayout

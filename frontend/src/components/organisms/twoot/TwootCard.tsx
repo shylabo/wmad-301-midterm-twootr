@@ -3,11 +3,11 @@ import { PiBookmarkSimpleBold, PiBookmarkSimpleFill, PiHeartBold, PiHeartFill } 
 
 import { Twoot } from '@/types'
 import { Avatar, AvatarImage } from '@/components/ui/avatar'
-import { Button } from './ui/button'
+import { Button } from '../../ui/button'
 import { getDaysCountFromDate, getFormattedDays, parseDateStringToDate } from '@/lib/utils'
 import { useBookmarks } from '@/hooks/useBookmarks'
 import { useLikes } from '@/hooks/useLikes'
-import { useRetweets } from '@/hooks/useRetweets'
+import { useRetwoots } from '@/hooks/useRetwoots'
 
 interface CardProps {
   twoot: Twoot
@@ -16,7 +16,7 @@ interface CardProps {
 const Card: React.FC<CardProps> = ({ twoot }) => {
   const { isBookmarked, toggleBookmark } = useBookmarks()
   const { isLiked, toggleLike } = useLikes()
-  const { isRetweeted, toggleRetweets } = useRetweets()
+  const { isRetwooted, toggleRetwoots } = useRetwoots()
 
   const parsedTwootDate = parseDateStringToDate(twoot.dateAdded)!
   const daysPassed = getDaysCountFromDate(parsedTwootDate)
@@ -34,7 +34,7 @@ const Card: React.FC<CardProps> = ({ twoot }) => {
 
   const handleRetweet = (event: React.MouseEvent<HTMLButtonElement, MouseEvent>, twootId: string) => {
     event.preventDefault()
-    toggleRetweets(twootId)
+    toggleRetwoots(twootId)
   }
 
   return (
@@ -59,7 +59,7 @@ const Card: React.FC<CardProps> = ({ twoot }) => {
             className="group hover:bg-green-500/20"
             onClick={(e) => handleRetweet(e, twoot._id)}
           >
-            {isRetweeted(twoot._id) ? (
+            {isRetwooted(twoot._id) ? (
               <AiOutlineRetweet className="text-green-500" />
             ) : (
               <AiOutlineRetweet className="group-hover:text-green-500" />
