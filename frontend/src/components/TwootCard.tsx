@@ -1,29 +1,41 @@
 import { AiOutlineRetweet } from 'react-icons/ai'
-import { PiBookmarkSimpleBold, PiHeartBold } from 'react-icons/pi'
+import { PiBookmarkSimpleBold, PiBookmarkSimpleFill, PiHeartBold, PiHeartFill } from 'react-icons/pi'
 
 import { Twoot } from '@/types'
 import { Avatar, AvatarImage } from '@/components/ui/avatar'
 import { Button } from './ui/button'
-import { getDaysCountFromDate, parseDateStringToDate } from '@/lib/utils'
+import { getDaysCountFromDate, getFormattedDays, parseDateStringToDate } from '@/lib/utils'
+import { useBookmarks } from '@/hooks/useBookmarks'
+import { useLikes } from '@/hooks/useLikes'
+import { useRetweets } from '@/hooks/useRetweets'
 
 interface CardProps {
   twoot: Twoot
 }
 
 const Card: React.FC<CardProps> = ({ twoot }) => {
-  const formattedDays = (days: number): string => {
-    if (days === 0) {
-      return 'Today'
-    } else if (days === 1) {
-      return 'Yesterday'
-    } else {
-      return `${days} days ago`
-    }
-  }
+  const { isBookmarked, toggleBookmark } = useBookmarks()
+  const { isLiked, toggleLike } = useLikes()
+  const { isRetweeted, toggleRetweets } = useRetweets()
 
   const parsedTwootDate = parseDateStringToDate(twoot.dateAdded)!
   const daysPassed = getDaysCountFromDate(parsedTwootDate)
-  const daysLabel = formattedDays(daysPassed)
+  const daysLabel = getFormattedDays(daysPassed)
+
+  const handleBookmark = (event: React.MouseEvent<HTMLButtonElement, MouseEvent>, twootId: string) => {
+    event.preventDefault()
+    toggleBookmark(twootId)
+  }
+
+  const handleLike = (event: React.MouseEvent<HTMLButtonElement, MouseEvent>, twootId: string) => {
+    event.preventDefault()
+    toggleLike(twootId)
+  }
+
+  const handleRetweet = (event: React.MouseEvent<HTMLButtonElement, MouseEvent>, twootId: string) => {
+    event.preventDefault()
+    toggleRetweets(twootId)
+  }
 
   return (
     <div className="flex items-start gap-x-3 w-full px-4 py-3 border-b-[1px] border-slate-100">
@@ -40,14 +52,14 @@ const Card: React.FC<CardProps> = ({ twoot }) => {
         <p className="text-sm break-words">{twoot.content}</p>
         {/* Actions */}
         <div className="flex items-center justify-end gap-1 pt-2">
-          <Button variant="ghost" size="icon">
-            <AiOutlineRetweet />
+          <Button type="button" variant="ghost" size="icon" onClick={(e) => handleRetweet(e, twoot._id)}>
+            {isRetweeted(twoot._id) ? <AiOutlineRetweet className="text-green-500" /> : <AiOutlineRetweet />}
           </Button>
-          <Button variant="ghost" size="icon">
-            <PiHeartBold />
+          <Button type="button" variant="ghost" size="icon" onClick={(e) => handleLike(e, twoot._id)}>
+            {isLiked(twoot._id) ? <PiHeartFill className="text-red-500" /> : <PiHeartBold />}
           </Button>
-          <Button variant="ghost" size="icon">
-            <PiBookmarkSimpleBold />
+          <Button type="button" variant="ghost" size="icon" onClick={(e) => handleBookmark(e, twoot._id)}>
+            {isBookmarked(twoot._id) ? <PiBookmarkSimpleFill className="text-orange-500" /> : <PiBookmarkSimpleBold />}
           </Button>
         </div>
       </div>

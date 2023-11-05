@@ -27,3 +27,13 @@ export function parseDateStringToDate(dateString: string): Date | null {
 
   return null
 }
+
+export const getFormattedDays = (days: number): string => {
+  if (days === 0) {
+    return 'Today'
+  } else if (days === 1) {
+    return 'Yesterday'
+  } else {
+    return `${days} days ago`
+  }
+}

@@ -31,8 +31,8 @@ const Home = () => {
       <div className="grid grid-cols-1">
         {twoots &&
           twoots.map((twoot, i) => (
-            <Link to={`/twoots/${twoot._id}`} className="hover:bg-secondary/40">
-              <TwootCard key={i} twoot={twoot} />
+            <Link key={i} to={`/twoots/${twoot._id}`} className="hover:bg-secondary/40">
+              <TwootCard twoot={twoot} />
             </Link>
           ))}
       </div>
