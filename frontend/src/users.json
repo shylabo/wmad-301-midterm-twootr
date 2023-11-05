@@ -4,14 +4,20 @@
     "firstName": "User",
     "lastName": "One",
     "slug": "user1",
+    "website": "https://www.shuya-life.com",
+    "location": "Vancouver",
+    "joinedDate": "Sun Nov 05 2023 10:13:34 GMT-0800",
     "email": "user1@example.com",
-    "password": "password"
+    "password": "hogehoge1234"
   },
   {
     "avatarUrl": "https://api.dicebear.com/7.x/pixel-art/svg?seed=harry",
     "firstName": "Harry",
     "lastName": "Potter",
     "slug": "harry-potter",
+    "website": "https://heroes-and-villain.fandom.com/wiki/Harry_Potter",
+    "location": "London",
+    "joinedDate": "Sun Nov 05 2023 10:13:34 GMT-0800",
     "email": "harry@example.com",
     "password": "harry1234"
   },
@@ -20,6 +26,9 @@
     "firstName": "Hermione",
     "lastName": "Granger",
     "slug": "hermione-granger",
+    "website": "https://heroes-and-villain.fandom.com/wiki/Hermione_Granger",
+    "location": "London",
+    "joinedDate": "Sun Nov 05 2023 10:13:34 GMT-0800",
     "email": "hermione@example.com",
     "password": "hermione1234"
   },
@@ -28,6 +37,9 @@
     "firstName": "Ron",
     "lastName": "Weasley",
     "slug": "ron-weasley",
+    "website": "https://heroes-and-villain.fandom.com/wiki/Ron_Weasley",
+    "location": "London",
+    "joinedDate": "Sun Nov 05 2023 10:13:34 GMT-0800",
     "email": "ron@example.com",
     "password": "ron123456"
   }

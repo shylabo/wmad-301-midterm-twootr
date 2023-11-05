@@ -33,7 +33,7 @@ const TabMenu: React.FC<TabMenuProps> = ({ userSlug }) => {
         const itemPath = `/${userSlug}${item.path}`
         const isActive = itemPath === pathname
         return (
-          <Button variant="ghost" className="h-full rounded-none" asChild>
+          <Button key={item.value} variant="ghost" className="h-full rounded-none" asChild>
             <Link to={itemPath} className={`${isActive && 'border-b-2 border-red-500'}`}>
               {item.label}
             </Link>

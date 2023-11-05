@@ -21,6 +21,9 @@ async function getTwoots(): Promise<Twoot[]> {
           firstName: twoot.author.split(' ')[0],
           lastName: twoot.author.split(' ')[1],
           slug: twoot.authorSlug,
+          website: 'whatever.com',
+          location: 'Japan',
+          joinedDate: 'Sun Nov 05 2023 10:13:34 GMT-0800',
           email: 'whatever@exmple.com',
           password: '',
         }

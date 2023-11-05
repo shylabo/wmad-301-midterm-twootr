@@ -12,12 +12,9 @@ const Home = () => {
   const [twoots, setTwoots] = useState<Twoot[]>([])
   const { user } = useUser()
 
-  if (!user) {
-    throw new Error('User not authenticated')
-  }
-
   useEffect(() => {
     const fetchTwoots = async () => {
+      if (!user) return null
       const fetchedTwoots = await getTwoots()
       setTwoots(fetchedTwoots)
     }
