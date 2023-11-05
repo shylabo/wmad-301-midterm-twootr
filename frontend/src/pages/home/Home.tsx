@@ -30,8 +30,8 @@ const Home = () => {
       <TwootInput user={user} onSubmitCallback={handleTwootSubmit} />
       <div className="grid grid-cols-1">
         {twoots &&
-          twoots.map((twoot, i) => (
-            <Link key={i} to={`/twoots/${twoot._id}`} className="hover:bg-secondary/40">
+          twoots.map((twoot) => (
+            <Link key={twoot._id} to={`/twoots/${twoot._id}`} className="hover:bg-secondary/40">
               <TwootCard twoot={twoot} />
             </Link>
           ))}

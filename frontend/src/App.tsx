@@ -6,6 +6,7 @@ import Home from '@/pages/home/Home'
 import Login from '@/pages/login/Login'
 import NotFound from '@/pages/NotFound'
 import TwootPage from '@/pages/twoot/Twoot'
+import Bookmarks from '@/pages/bookmarks/Bookmarks'
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
         <Route element={<Layout />}>
           <Route index element={<Home />} />
           <Route path="twoots/:twootId" element={<TwootPage />} />
+          <Route path="bookmarks" element={<Bookmarks />} />
         </Route>
 
         {/* Error */}
