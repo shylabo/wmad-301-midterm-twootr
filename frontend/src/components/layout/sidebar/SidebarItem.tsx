@@ -15,7 +15,7 @@ const SidebarItem: React.FC<SidebarItemProps> = ({ label, icon: Icon, href }) =>
   const handleItemClick = () => {
     if (href === '/logout') {
       localStorage.removeItem('user')
-      navigate(0) // refresh
+      navigate(href)
     } else {
       navigate(href)
     }

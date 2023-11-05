@@ -18,6 +18,8 @@ const TwootInput: React.FC<TwootInputProps> = ({ user, onSubmitCallback }) => {
   const [charCount, setCharCount] = useState(0)
   const contentRef = useRef<HTMLTextAreaElement | null>(null)
 
+  if (!user) return
+
   const maxTwootTextLength = 140
 
   const onSubmit = async (event: FormEvent) => {

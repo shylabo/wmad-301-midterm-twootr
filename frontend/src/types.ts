@@ -3,6 +3,9 @@ export interface User {
   firstName: string
   lastName: string
   slug: string
+  website?: string
+  location?: string
+  joinedDate: string
   email: string
   password: string
 }
