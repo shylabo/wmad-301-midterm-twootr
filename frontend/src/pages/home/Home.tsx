@@ -1,10 +1,11 @@
+import { Link } from 'react-router-dom'
 import { useEffect, useState } from 'react'
 
 import getTwoots from '@/actions/getTwoots'
 import TwootCard from '@/components/TwootCard'
 import TwootInput from '@/components/TwootInput'
+import Header from '@/components/layout/header/Header'
 import { Twoot, User } from '@/types'
-import { Link } from 'react-router-dom'
 
 const Home = () => {
   const [twoots, setTwoots] = useState<Twoot[]>([])
@@ -27,6 +28,7 @@ const Home = () => {
 
   return (
     <div>
+      <Header label="Twoots" />
       <TwootInput user={user} onSubmitCallback={handleTwootSubmit} />
       <div className="grid grid-cols-1">
         {twoots &&

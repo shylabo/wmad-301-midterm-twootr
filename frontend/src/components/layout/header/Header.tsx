@@ -16,7 +16,7 @@ const Header: React.FC<HeaderProps> = ({ label, showBackArrow }) => {
       <div className="flex items-center gap-2">
         {showBackArrow && (
           <Button variant="ghost" size="icon">
-            <PiArrowLeftBold onClick={() => navigate('/')} size={20} className="shrink-0" />
+            <PiArrowLeftBold onClick={() => navigate(-1)} size={20} className="shrink-0" />
           </Button>
         )}
         <h1 className="text-xl font-semibold">{label}</h1>

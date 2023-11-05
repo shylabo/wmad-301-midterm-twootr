@@ -4,6 +4,7 @@ import getTwootById from '@/actions/getTwootById'
 import TwootCard from '@/components/TwootCard'
 import { useEffect, useState } from 'react'
 import { Twoot } from '@/types'
+import Header from '@/components/layout/header/Header'
 
 const TwootPage = () => {
   const [twoot, setTwoot] = useState<Twoot>()
@@ -23,7 +24,12 @@ const TwootPage = () => {
     fetchTwoot()
   }, [twootId])
 
-  return twoot && <TwootCard twoot={twoot} />
+  return (
+    <>
+      <Header label="Post" showBackArrow />
+      {twoot && <TwootCard twoot={twoot} />}
+    </>
+  )
 }
 
 export default TwootPage
