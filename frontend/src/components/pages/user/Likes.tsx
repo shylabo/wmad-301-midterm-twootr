@@ -35,7 +35,13 @@ const Likes = () => {
 
   return (
     <>
-      {twoots === null ? null : twoots.length === 0 ? (
+      {twoots === null ? (
+        <>
+          {Array.from({ length: 10 }, (_, i) => (
+            <TwootCard.Skeleton key={i} />
+          ))}
+        </>
+      ) : twoots.length === 0 ? (
         <div className="w-full flex justify-center pt-10">
           <h1>You have no likes yet</h1>
         </div>

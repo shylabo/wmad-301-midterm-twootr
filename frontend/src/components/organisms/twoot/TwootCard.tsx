@@ -8,12 +8,13 @@ import { getDaysCountFromDate, getFormattedDays, parseDateStringToDate } from '@
 import { useBookmarks } from '@/hooks/useBookmarks'
 import { useLikes } from '@/hooks/useLikes'
 import { useRetwoots } from '@/hooks/useRetwoots'
+import { Skeleton } from '@/components/ui/skeleton'
 
 interface CardProps {
   twoot: Twoot
 }
 
-const Card: React.FC<CardProps> = ({ twoot }) => {
+const Card = ({ twoot }: CardProps) => {
   const { isBookmarked, toggleBookmark } = useBookmarks()
   const { isLiked, toggleLike } = useLikes()
   const { isRetwooted, toggleRetwoots } = useRetwoots()
@@ -98,3 +99,15 @@ const Card: React.FC<CardProps> = ({ twoot }) => {
 }
 
 export default Card
+
+Card.Skeleton = function CardSkeleton() {
+  return (
+    <div className="flex items-start gap-x-3 w-full px-4 py-3 border-b-[1px] border-secondary">
+      <Skeleton className="h-10 w-10 rounded-full" />
+      <div className="space-y-1 w-[calc(100%-60px)]">
+        <Skeleton className="h-4 w-[50%]" />
+        <Skeleton className="h-16 w-full" />
+      </div>
+    </div>
+  )
+}

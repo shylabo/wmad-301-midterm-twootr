@@ -7,7 +7,7 @@ import { Twoot } from '@/types'
 import Header from '@/components/layout/header/Header'
 
 const TwootPage = () => {
-  const [twoot, setTwoot] = useState<Twoot>()
+  const [twoot, setTwoot] = useState<Twoot | null>()
   const { twootId } = useParams()
   if (!twootId) {
     throw new Error('TwootId is missing')
@@ -15,11 +15,15 @@ const TwootPage = () => {
 
   useEffect(() => {
     const fetchTwoot = async () => {
-      const fetchedTwoot = await getTwootById(twootId)
-      if (!fetchedTwoot) {
-        throw new Error('Twoot not found')
+      try {
+        const fetchedTwoot = await getTwootById(twootId)
+        if (!fetchedTwoot) {
+          throw new Error('Twoot not found')
+        }
+        setTwoot(fetchedTwoot)
+      } catch (err) {
+        setTwoot(null)
       }
-      setTwoot(fetchedTwoot)
     }
     fetchTwoot()
   }, [twootId])
@@ -27,12 +31,14 @@ const TwootPage = () => {
   return (
     <>
       <Header label="Post" showBackArrow />
-      {twoot ? (
-        <TwootCard twoot={twoot} />
-      ) : (
+      {twoot === undefined ? (
+        <TwootCard.Skeleton />
+      ) : twoot === null ? (
         <div className="flex justify-center pt-10">
           <h1 className="text-xl font-medium">Twoot not found</h1>
         </div>
+      ) : (
+        <TwootCard twoot={twoot} />
       )}
     </>
   )

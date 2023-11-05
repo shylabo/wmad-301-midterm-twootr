@@ -56,7 +56,7 @@ Twootr is a Social Media SPA built using React for _twoots_.
 
 - ### Bonus: (2)
 
-  [] 1. Theme Toggle (Light & Dark).
+  [x] 1. Theme Toggle (Light & Dark).
 
   [x] 2. Inputs should be focussed whenever a form is displayed.
 

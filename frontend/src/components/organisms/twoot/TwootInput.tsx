@@ -48,7 +48,7 @@ const TwootInput: React.FC<TwootInputProps> = ({ user, onSubmitCallback }) => {
 
       await onSubmitCallback(newTwoot)
     } catch (err) {
-      console.log(err)
+      console.error(err)
     } finally {
       setIsSubmitting(false)
     }
