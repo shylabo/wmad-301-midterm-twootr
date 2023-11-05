@@ -62,7 +62,7 @@ const TwootInput: React.FC<TwootInputProps> = ({ user, onSubmitCallback }) => {
 
   return (
     <form onSubmit={onSubmit}>
-      <div className="p-3 border-b border-secondary space-y-3">
+      <div className="p-3 border-b border-border space-y-3">
         <div className="flex items-start gap-5">
           <Avatar>
             <AvatarImage src={user.avatarUrl} alt="user avatar" />
