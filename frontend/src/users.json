@@ -1,12 +1,12 @@
 [
   {
-    "avatarUrl": "https://api.dicebear.com/7.x/pixel-art/svg?seed=user",
-    "firstName": "User",
-    "lastName": "One",
-    "slug": "user1",
+    "avatarUrl": "https://api.dicebear.com/7.x/pixel-art/svg?seed=shuya",
+    "firstName": "Shuya",
+    "lastName": "Sonoda",
+    "slug": "shuya-life",
     "website": "https://www.shuya-life.com",
     "location": "Vancouver",
-    "joinedDate": "Sun Nov 05 2023 10:13:34 GMT-0800",
+    "joinedDate": "Sun Oct 30 2023 10:13:34 GMT-0800",
     "email": "user1@example.com",
     "password": "hogehoge1234"
   },
