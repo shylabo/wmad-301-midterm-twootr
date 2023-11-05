@@ -74,7 +74,7 @@ const UserLayout: React.FC = () => {
       localStorage.setItem('user', JSON.stringify(updatedUser))
       navigate(0)
     } catch (err) {
-      console.log(err)
+      console.error(err)
     } finally {
       setIsSubmitting(false)
     }

@@ -29,18 +29,23 @@ const Posts = () => {
 
   return (
     <>
-      {twoots === null ? null : twoots.length === 0 ? (
+      {twoots === null ? (
+        <>
+          {Array.from({ length: 10 }, (_, i) => (
+            <TwootCard.Skeleton key={i} />
+          ))}
+        </>
+      ) : twoots.length === 0 ? (
         <div className="w-full flex justify-center pt-10">
-          <h1>You have no twoots yet</h1>
+          <h1>You have no posts yet</h1>
         </div>
       ) : (
         <div className="grid grid-cols-1">
-          {twoots &&
-            twoots.map((twoot) => (
-              <Link key={twoot._id} to={`/twoots/${twoot._id}`} className="hover:bg-secondary/40">
-                <TwootCard twoot={twoot} />
-              </Link>
-            ))}
+          {twoots.map((twoot) => (
+            <Link key={twoot._id} to={`/twoots/${twoot._id}`} className="hover:bg-secondary/40">
+              <TwootCard twoot={twoot} />
+            </Link>
+          ))}
         </div>
       )}
     </>
