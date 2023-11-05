@@ -78,7 +78,7 @@ Twootr is a Social Media SPA built using React for _twoots_.
 
 - ### Bonus: (1)
 
-  [] 1. Use of `React Router v6` with:
+  [x] 1. Use of `React Router v6` with:
 
       - Layouts
 
