@@ -12,12 +12,21 @@ interface SidebarItemProps {
 const SidebarItem: React.FC<SidebarItemProps> = ({ label, icon: Icon, href }) => {
   const navigate = useNavigate()
 
+  const handleItemClick = () => {
+    if (href === '/logout') {
+      localStorage.removeItem('user')
+      navigate(0) // refresh
+    } else {
+      navigate(href)
+    }
+  }
+
   return (
     <Button
       size="icon"
       variant="ghost"
-      onClick={() => navigate(href)}
-      className="flex flex-row items-center lg:w-full h-14 w-14"
+      onClick={handleItemClick}
+      className="flex flex-row items-center lg:w-fit h-14 w-14"
     >
       <div className="flex items-center gap-x-4 lg:p-4 w-max lg:w-full">
         <Icon size={24} color={'#d80621'} className="shrink-0" />
