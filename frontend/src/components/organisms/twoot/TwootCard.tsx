@@ -39,7 +39,7 @@ const Card = ({ twoot }: CardProps) => {
   }
 
   return (
-    <div className="flex items-start gap-x-3 w-full px-4 py-3 border-b-[1px] border-secondary">
+    <div className="flex items-start gap-x-3 w-full px-4 py-3 border-b border-border">
       <Avatar>
         <AvatarImage src={twoot.user.avatarUrl} alt="user avatar" />
       </Avatar>
@@ -102,7 +102,7 @@ export default Card
 
 Card.Skeleton = function CardSkeleton() {
   return (
-    <div className="flex items-start gap-x-3 w-full px-4 py-3 border-b-[1px] border-secondary">
+    <div className="flex items-start gap-x-3 w-full px-4 py-3 border-b border-border">
       <Skeleton className="h-10 w-10 rounded-full" />
       <div className="space-y-1 w-[calc(100%-60px)]">
         <Skeleton className="h-4 w-[50%]" />

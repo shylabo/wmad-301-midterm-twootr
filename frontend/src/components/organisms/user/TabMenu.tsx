@@ -28,7 +28,7 @@ const TabMenu: React.FC<TabMenuProps> = ({ userSlug }) => {
   ] as const
 
   return (
-    <nav className="flex items-center border-b-[1px] border-secondary">
+    <nav className="flex items-center border-b border-border">
       {menu.map((item) => {
         const itemPath = `/${userSlug}${item.path}`
         const isActive = itemPath === pathname
