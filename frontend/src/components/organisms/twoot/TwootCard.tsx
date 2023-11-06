@@ -9,6 +9,7 @@ import { useBookmarks } from '@/hooks/useBookmarks'
 import { useLikes } from '@/hooks/useLikes'
 import { useRetwoots } from '@/hooks/useRetwoots'
 import { Skeleton } from '@/components/ui/skeleton'
+import { Link } from 'react-router-dom'
 
 interface CardProps {
   twoot: Twoot
@@ -39,7 +40,14 @@ const Card = ({ twoot }: CardProps) => {
   }
 
   return (
-    <div className="flex items-start gap-x-3 w-full px-4 py-3 border-b border-border">
+    <Link
+      to={`/twoots/${twoot._id}`}
+      className={`hover:bg-secondary/40
+      ring-offset-background transition-colors
+      focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-0
+      flex items-start gap-x-3 w-full px-4 py-3 border-b border-border
+      `}
+    >
       <Avatar>
         <AvatarImage src={twoot.user.avatarUrl} alt="user avatar" />
       </Avatar>
@@ -94,7 +102,7 @@ const Card = ({ twoot }: CardProps) => {
           </Button>
         </div>
       </div>
-    </div>
+    </Link>
   )
 }
 

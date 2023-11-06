@@ -1,4 +1,3 @@
-import { Link } from 'react-router-dom'
 import { useEffect, useState } from 'react'
 
 import getTwoots from '@/actions/getTwoots'
@@ -39,9 +38,7 @@ const Home = () => {
         ) : (
           <>
             {twoots.map((twoot) => (
-              <Link key={twoot._id} to={`/twoots/${twoot._id}`} className="hover:bg-secondary/40">
-                <TwootCard twoot={twoot} />
-              </Link>
+              <TwootCard key={twoot._id} twoot={twoot} />
             ))}
           </>
         )}

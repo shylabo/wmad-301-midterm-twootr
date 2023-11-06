@@ -1,4 +1,3 @@
-import { Link } from 'react-router-dom'
 import { useEffect, useState } from 'react'
 
 import TwootCard from '@/components/organisms/twoot/TwootCard'
@@ -37,9 +36,7 @@ const Bookmarks = () => {
       ) : (
         <div className="grid grid-cols-1">
           {twoots.map((twoot) => (
-            <Link key={twoot._id} to={`/twoots/${twoot._id}`} className="hover:bg-secondary/40">
-              <TwootCard twoot={twoot} />
-            </Link>
+            <TwootCard key={twoot._id} twoot={twoot} />
           ))}
         </div>
       )}
