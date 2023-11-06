@@ -14,8 +14,8 @@ const Header: React.FC<HeaderProps> = ({ label, showBackArrow }) => {
 
   return (
     <div className="sticky top-0 z-50 bg-ghost/80 backdrop-blur-sm p-3">
-      <div className="flex items-center justify-between gap-2">
-        <div className="flex items-center">
+      <div className="flex items-center justify-between">
+        <div className="flex items-center gap-x-2">
           {showBackArrow && (
             <Button variant="ghost" size="icon" type="button" onClick={() => navigate(-1)}>
               <PiArrowLeftBold size={20} className="shrink-0" />

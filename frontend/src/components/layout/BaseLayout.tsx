@@ -21,10 +21,11 @@ const BaseLayout = () => {
           <Sidebar />
         </div>
         <div className="col-span-12 sm:col-span-11 lg:col-span-6 border-x border-border">
-          <Outlet />
+          {/* Mobile Menu is intentionally put above outlet for A11Y purpose */}
           <div className="sm:hidden">
             <MobileMenu />
           </div>
+          <Outlet />
         </div>
         <div className="hidden lg:block col-span-3" />
       </div>

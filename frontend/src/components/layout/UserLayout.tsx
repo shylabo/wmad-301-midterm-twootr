@@ -201,7 +201,14 @@ const UserLayout: React.FC = () => {
           {user.website && (
             <p className="flex items-center gap-x-1">
               <PiLinkSimpleBold />
-              <a href={user.website} target="_blank" className="text-blue-500 hover:underline">
+              <a
+                href={user.website}
+                target="_blank"
+                className="
+                  text-primary hover:underline ring-offset-background transition-colors
+                  focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-0
+              "
+              >
                 {user.website}
               </a>
             </p>
