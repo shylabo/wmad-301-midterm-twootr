@@ -104,7 +104,7 @@ Twootr is a Social Media SPA built using React for _twoots_.
 
       - Git Commits
 
-  [] 2. Create and Maintain a Plan (Create a `Readme File`):
+  [x] 2. Create and Maintain a Plan (Create a `Readme File`):
 
       - React Component Structure (Diagram)
 
@@ -124,7 +124,7 @@ Twootr is a Social Media SPA built using React for _twoots_.
 
 - ### Minimum: (5)
 
-  [] 1. Show `PLAN.md` file, explaining your decisions.
+  [x] 1. Show `PLAN.md` file, explaining your decisions.
 
   [] 2. How was the project divided?
 
