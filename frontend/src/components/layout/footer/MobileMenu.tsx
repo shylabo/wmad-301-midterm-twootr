@@ -37,7 +37,7 @@ const MobileMenu = () => {
     navigate('/login')
   }
   return (
-    <div className="fixed flex bottom-0 w-full bg-card border-t border-border">
+    <div className="fixed z-50 flex bottom-0 w-full bg-card border-t border-border">
       {items.map(({ icon: Icon, label, onClick }) => (
         <Button key={label} variant="ghost" onClick={onClick} className="w-full p-6 rounded-none">
           <Icon size={24} className="text-secondary-foreground" />
