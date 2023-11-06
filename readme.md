@@ -126,13 +126,13 @@ Twootr is a Social Media SPA built using React for _twoots_.
 
   [x] 1. Show `PLAN.md` file, explaining your decisions.
 
-  [] 2. How was the project divided?
+  [x] 2. How was the project divided?
 
-  [] 3. What you learned?
+  [x] 3. What you learned?
 
-  [] 4. What you struggled the most?
+  [x] 4. What you struggled the most?
 
-  [] 5. What is the future scope?
+  [x] 5. What is the future scope?
 
 - ### Bonus: (2)
 
