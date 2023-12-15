@@ -7,6 +7,7 @@ import { Button } from '@/components/ui/button'
 import { Label } from '@/components/ui/label'
 import { Input } from '@/components/ui/input'
 import { useToast } from '@/components/ui/use-toast'
+import { PiInfo } from 'react-icons/pi'
 
 const Login = () => {
   const { toast } = useToast()
@@ -57,6 +58,12 @@ const Login = () => {
         className="space-y-10 w-full max-w-md bg-card/50 backdrop-blur-lg border p-10 rounded-lg"
       >
         <h1 className="text-3xl">Welcome back to Twootr!</h1>
+        <div className="border-2 bg-secondary rounded-md px-4 py-2">
+          <p className="flex items-center gap-x-2 italic">
+            <PiInfo /> Showcase purpose <br />
+          </p>
+          email: user1@example.com <br /> password: Vancouver1234
+        </div>
         <div className="space-y-3">
           <div className="flex flex-col gap-2">
             <Label htmlFor="email">email</Label>
